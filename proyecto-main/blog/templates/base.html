@@ -37,26 +37,26 @@
           </ul>
           <ul class="navbar-nav mr-auto">
             {% if user.is_authenticated %}
-                <li class="right-align">
-                  <strong class="nav-link">
+                <li class="nav-item">
+                  <strong class="nav-link" style="padding-top: 10px;">
                   <img class="user-image-mini" src="{% static 'img/usuario.png' %}">
                   Hola {{ user.username }}</strong>                  
                 </li>
 
-                <li class="right-align" class="right-align">
-                  <a class="nav-link" href="{% url 'logout' %}">Mi cuenta</a>
+                <li class="nav-item">
+                  <button class="botton_mi_cuenta" onclick="irAPaginaAdministracion()">Mi cuenta</button>
                 </li>
 
-                <li class="right-align" class="right-align">
+                <li class="nav-item">
                   <a class="nav-link" href="{% url 'logout' %}">LogOut</a>
                 </li>             
 
             {% else %}
-                <li class="right-align" class="right-align">
+                <li class="nav-item">
                   <a class="nav-link" href="{% url 'login' %}">LogIn</a>
                 </li>    
 
-                <li class="right-align">
+                <li class="nav-item">
                   <a class="nav-link" class="right-align" href="{% url 'registro' %}">Registrarse</a>
                 </li>
 
@@ -80,6 +80,13 @@
     <footer>
       <p>&copy; 2023 TurisAR . Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+      // Función para redirigir a la página de administración
+      function irAPaginaAdministracion() {
+        window.location.href = '/admin';  // Puedes ajustar la ruta según tu configuración
+      }
+    </script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 .contenedor{
     /*background-color: rgb(195, 188, 157);*/
     background: linear-gradient(180deg, rgb(255, 239, 219), rgb(200, 138, 2, 40%));
-
+    background-attachment: fixed;
     
     text-align: center;
 
@@ -25,34 +25,23 @@
 }
 
 .user-image-mini{
-    width: 20px;
-    height: 20  px;
+    width: 25px;
+    height: 25px;
 }
 
-/* Estilo para los elementos del menú */
-.menu-usuario {
-    /*margin-left: 14%; /* Ajusta el espacio entre los elementos según tus necesidades */
+
+/* Cambiar el color de todos los enlaces */
+a {
+    color: #6cb6e8; /* Puedes cambiar este valor al color que prefieras */
+    text-decoration: none; /* Elimina el subrayado predeterminado en los enlaces */
+    font-weight: bold;
     }
 
+/* Cambiar el color de los enlaces al pasar el mouse sobre ellos */
+a:hover {
+    color: #e74c3c; /* Cambia este valor al color que prefieras al pasar el mouse */
+}
 
-
-    /* Cambiar el color de todos los enlaces */
-    a {
-        color: #6cb6e8; /* Puedes cambiar este valor al color que prefieras */
-        text-decoration: none; /* Elimina el subrayado predeterminado en los enlaces */
-        font-weight: bold;
-      }
-  
-      /* Cambiar el color de los enlaces al pasar el mouse sobre ellos */
-      a:hover {
-        color: #e74c3c; /* Cambia este valor al color que prefieras al pasar el mouse */
-      }
-
-
-      .navbar {
-        background-color: #0b5770;
-        padding: 10px;
-      }      
 
     /* Estilos para el pie de página */
     footer {
@@ -65,3 +54,17 @@
       width: 100%;
       height: 35px;
     }
+
+/* Agregar estilo para el cursor */
+    .botton_mi_cuenta {
+        /*cursor: pointer;
+        /*color: #6cb6e8; /* Puedes cambiar este valor al color que prefieras */
+        text-decoration: none; /* Elimina el subrayado predeterminado en los enlaces */
+        font-weight:600 ;
+        background-color: rgb(60, 60, 60); /* Color oscuro para el fondo */
+        color: white; /* Color blanco para el texto */
+        border: none; /* Sin bordes */
+        padding: 10px 15px; /* Ajustar el relleno según sea necesario */
+        cursor: pointer;         
+        border-radius: 5px; /* Bordes redondeados */       
+      }    
