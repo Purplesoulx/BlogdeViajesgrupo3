@@ -2,10 +2,27 @@
 {% load static %}
 {% block titulo %}Noticias{% endblock titulo %}
 {% block contenido %}
-    <h2>Crea una noticia</h2>
+<div class="contenedor-titulo-seccion">
+    <div style="display: flex; padding-left: 20px; padding-top: 10px;">
+    <h2>Destinos -> Publicar un destino</h2>
+    </div>
+
+    <hr style="border: 2px solid #3498db; margin-left: 20px; margin-right: 20px;">
+
+</div>
+
+<div class="contenedor-contenido-seccion">
+
+    <br>
+    <br>
+    <br>
+    <br>
+
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Guardar</button>
     </form>
+
+</div>
 {% endblock contenido %}
