@@ -1,34 +1,71 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block titulo %}Noticias{% endblock titulo %}
+{% block titulo %}Destinos{% endblock titulo %}
 {% block contenido %}
-    <h2>aca estan mis noticias !</h2>
-    <form method="get" action="{% url 'noticias:listar'%}">
-        <select name="id">
-            <option value="">Todas</option>
-            {% for cat in categorias %}
-                <option value="{{cat.pk}}">{{cat.nombre}}</option>
-            {% endfor %}
-        </select>
+
+    <div class="contenedor-titulo-seccion">
+        <div style="display: flex; padding-left: 20px; padding-top: 10px;">
+            <h2>Destinos</h2>
+            <a class="nav-link" style="padding-top: 10px; font-size: large;" href="{% url 'noticias:addnoticia'%}">+ PUBLICA UN DESTINO</a>
+        </div>
         
-        <select name="antiguedad">
-            <option value="">Ordenar por Antigüedad</option>
-            <option value="asc">Más antiguas primero</option>
-            <option value="desc">Más recientes primero</option>
-        </select>
-        
-        <select name="orden">
-            <option value="">Ordenar alfabéticamente</option>
-            <option value="asc">A - Z</option>
-            <option value="desc">Z - A</option>
-        </select>
-        
-        <input type="submit" value="Filtrar">
-    </form>    
-    {% for noticia in noticias %}
-        <h3><a href="{% url 'noticias:detalle' noticia.pk %}">Titulo: {{noticia.titulo}}</a></h3>
-        <img src="{{noticia.imagenes.url}}" width="10%">
+        <hr style="border: 2px solid #3498db; margin-left: 20px; margin-right: 20px;">
+
+        <div>
+            <form method="get" action="{% url 'noticias:listar'%}" style="text-align: left; padding-left: 20px; margin-top: -10px;">
+                <select name="id"">
+                    <option value="">Todas</option>
+                    {% for cat in categorias %}
+                        <option value="{{cat.pk}}">{{cat.nombre}}</option>
+                    {% endfor %}
+                </select>
+                
+                <select name="antiguedad">
+                    <option value="">Ordenar por Antigüedad</option>
+                    <option value="asc">Más antiguas primero</option>
+                    <option value="desc">Más recientes primero</option>
+                </select>
+                
+                <select name="orden">
+                    <option value="">Ordenar alfabéticamente</option>
+                    <option value="asc">A - Z</option>
+                    <option value="desc">Z - A</option>
+                </select>
+                
+                <input type="submit" value="Filtrar">
+            </form>    
+        </div>
         <br>
-    {% endfor %}
+
+    </div>
+
+    <div class="contenedor-contenido-seccion">
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="tarjetas-destinos">
+
+            {% for noticia in noticias %}
+                <div class="tarjeta-destino">
+                    <div class="etiqueta-flotante">
+                        {{noticia.categoria_noticia}}
+                      </div>
+
+                    <img src="{{noticia.imagenes.url}}" width="10%">
+                    <div class="contenido">
+                        <h3><a href="{% url 'noticias:detalle' noticia.pk %}">{{noticia.titulo}}</a></h3>
+                        <p>{{noticia.resumen}}</p>
+                    </div>
+                </div>        
+            {% endfor %}
+
+        </div>
+
+    </div>
 
 {% endblock contenido %}

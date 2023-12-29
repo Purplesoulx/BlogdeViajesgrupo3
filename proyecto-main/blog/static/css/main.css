@@ -9,8 +9,30 @@
 
 }
 
+/* Estilos para la barra de desplazamiento en navegadores compatibles */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #3498db; /* Color del "pulgón" de la barra de desplazamiento */
+    border-radius: 6px; /* Bordes redondeados del "pulgón" */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color de fondo de la barra de desplazamiento */
+  }
+  
+
 .noti{
     text-align: center;
+}
+
+.contenedor-titulo-seccion{
+    margin-top: -10px;
+    position: fixed;
+    background-color: whitesmoke;
+    width: 100%;
 }
 
 .title-image{
@@ -22,6 +44,7 @@
     position: fixed; /* Barra de navegación fija */
     top: 0; /* Fijar en la parte superior */
     width: 100%; /* Ocupar todo el ancho */
+
 }
 
 .user-image-mini{
@@ -68,3 +91,50 @@ a:hover {
         cursor: pointer;         
         border-radius: 5px; /* Bordes redondeados */       
       }    
+
+
+/* Estilos para las tarjetas y su contenedor */
+    .tarjetas-destinos {
+        display: flex;
+        gap: 20px; /* Espacio entre las tarjetas */
+        padding-left: 20px;
+        overflow-x: auto;
+        flex-wrap: wrap; /* Permitir el salto de línea cuando sea necesario */
+      }
+  
+      .tarjeta-destino {
+        /*position: relative;*/
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 250px; /* Ancho de la tarjeta */
+        border-radius: 10px;
+      }
+  
+      .tarjeta-destino img {
+        width: 100%; /* La imagen ocupa el 100% del ancho de la tarjeta */
+        height: 150px; /* Altura de la imagen */
+        object-fit: cover; /* Ajusta la imagen para llenar la caja sin distorsionar */
+      }
+  
+      .tarjeta-destino .contenido {
+        padding: 10px;
+        background-color: white;
+        text-align: left;
+      }
+
+      
+    /* Estilos para la etiqueta flotante */
+    .etiqueta-flotante {
+        /*position: absolute;*/
+        top: 10px; /* Distancia desde la parte superior de la tarjeta */
+        left: 10px; /* Distancia desde la izquierda de la tarjeta */
+        background-color: rgb(60, 60, 60);
+        color: #fff;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 5px;
+      }
+  
