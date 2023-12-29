@@ -140,3 +140,33 @@ a:hover {
   
 
       /*** ADD NOTICIA ****/
+    /*Tarjetas home
+    /* Estilos para las tarjetas y su contenedor */
+    .tarjetas-home {
+      display: flex;
+      gap: 20px; /* Espacio entre las tarjetas */
+      padding-left: 20px;
+      overflow-x: auto;
+      flex-wrap: wrap; /* Permitir el salto de línea cuando sea necesario */
+    }
+
+    .tarjeta-home {
+      /*position: relative;*/
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 450px; /* Ancho de la tarjeta */
+      border-radius: 10px;
+    }
+
+    .tarjeta-home img {
+      width: 100%; /* La imagen ocupa el 100% del ancho de la tarjeta */
+      height: 150px; /* Altura de la imagen */
+      object-fit: cover; /* Ajusta la imagen para llenar la caja sin distorsionar */
+    }
+
+    .tarjeta-home .contenido {
+      padding: 10px;
+      background-color: white;
+      text-align: left;
+    }

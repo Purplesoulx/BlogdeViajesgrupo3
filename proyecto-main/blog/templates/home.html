@@ -2,10 +2,42 @@
 {% load static %}
 {% block titulo %}Home{% endblock titulo %}
 {% block contenido %}
-    <h2>Ultimas noticias</h2>
-    {% for noticia in ultimas_noticias %}
-        <h3><a href="{% url 'noticias:detalle' noticia.pk %}">Titulo: {{noticia.titulo}}</a></h3>
-        <img src="{{noticia.imagenes.url}}" width="10%">
-        <br>
-    {% endfor %}
+
+    <div class="contenedor-titulo-seccion">
+        <div style="display: flex; padding-left: 20px; padding-top: 10px;">
+            <h2>Actividad reciente</h2>
+
+        </div>
+        
+        <hr style="border: 2px solid #3498db; margin-left: 20px; margin-right: 20px;"></div>
+
+
+        <div class="contenedor-contenido-seccion">
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="tarjetas-home">
+
+            {% for noticia in ultimas_noticias %}
+                <div class="tarjeta-home">
+                    <div class="etiqueta-flotante">
+                        {{noticia.categoria_noticia}}
+                    </div>
+
+                    <img src="{{noticia.imagenes.url}}" width="10%">
+                    <div class="contenido">
+                        <h3><a href="{% url 'noticias:detalle' noticia.pk %}">{{noticia.titulo}}</a></h3>
+                        <p>{{noticia.resumen}}</p>
+                    </div>
+                </div>    
+            {% endfor %}
+
+            </div>
+
+    </div>
 {% endblock contenido %}
