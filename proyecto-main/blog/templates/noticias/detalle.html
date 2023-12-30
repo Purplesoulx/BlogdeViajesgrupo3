@@ -21,7 +21,8 @@
             >{{noticias.categoria_noticia}}
         </p>
         <p style="color: #1e557b; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 24px;">@{{noticias.autor}}</p>
-        {% if user.is_authenticated and noticia.autor == user or user.is_staff %}
+        
+        {% if noticia.autor == user or user.is_staff %}
         <a href="{% url 'noticias:edit_noticia' pk=noticias.pk %}">Editar</a>
             <form method="POST" action="{% url 'noticias:detalle' pk=noticias.pk %}">
                 {% csrf_token %}
