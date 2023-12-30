@@ -44,7 +44,7 @@
     position: fixed; /* Barra de navegación fija */
     top: 0; /* Fijar en la parte superior */
     width: 100%; /* Ocupar todo el ancho */
-
+    z-index: 9999999;
 }
 
 .user-image-mini{
@@ -110,6 +110,12 @@ a:hover {
         width: 250px; /* Ancho de la tarjeta */
         border-radius: 10px;
       }
+
+        /** Efecto  over**/
+        /*.tarjeta-destino:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añadimos una sombra en el hover */
+        /*}*/
+
   
       .tarjeta-destino img {
         width: 100%; /* La imagen ocupa el 100% del ancho de la tarjeta */
@@ -135,12 +141,29 @@ a:hover {
         padding-right: 10px;
         padding-top: 5px;
         padding-bottom: 5px;
-        border-radius: 5px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
       }
   
+      .etiqueta-flotante-pie {
+        /*position: absolute;*/
+        top: 10px; /* Distancia desde la parte superior de la tarjeta */
+        left: 10px; /* Distancia desde la izquierda de la tarjeta */
+        background-color: #1e557b;
+        color: #fff;
+        padding-left: 10px;
+        padding-right: 10px;  
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        /*text-align: left;*/
+      }      
 
       /*** ADD NOTICIA ****/
-    /*Tarjetas home
+
+/*** HOME /**/
+  /*Tarjetas home
     /* Estilos para las tarjetas y su contenedor */
     .tarjetas-home {
       display: flex;
@@ -170,4 +193,81 @@ a:hover {
       background-color: white;
       text-align: left;
     }
+
+/*** DETALLE PUBLICACION ***/
+    /* TITULO IMAGEN */
+        .imagen-titulo-detalle {
+          /*position: relative;*/
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          overflow: hidden;
+          width: 100%; /* Ancho de la tarjeta */
+        }
+
+        .imagen-titulo-detalle img {
+          width: 100%; /* La imagen ocupa el 100% del ancho de la tarjeta */
+          height: 400px; /* Altura de la imagen */
+          object-fit: cover; /* Ajusta la imagen para llenar la caja sin distorsionar */
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+            /* Estilos para la etiqueta flotante */
+            .imagen-titulo-detalle .titulo-flotante-detalle {
+              z-index: 1;
+              position: absolute;
+              top: 200px; /* Distancia desde la parte superior de la tarjeta */
+              left: 10px; /* Distancia desde la izquierda de la tarjeta */
+              /*background-color: rgb(60, 60, 60);*/
+              color: #fff;
+              padding-left: 10px;
+              padding-right: 10px;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              font-weight: bolder;
+              font-size: 60px;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
     
+            .imagen-titulo-detalle .resumen-flotante-detalle {
+              z-index: 2;
+              position: absolute;
+              top: 300px; /* Distancia desde la parte superior de la tarjeta */
+              left: 10px; /* Distancia desde la izquierda de la tarjeta */
+              /*background-color: rgb(60, 60, 60);*/
+              color: #fff;
+              padding-left: 10px;
+              padding-right: 10px;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              font-weight: bolder;
+              font-size: 30px;
+              text-align: left;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }            
+    
+            .contenido-detalle {
+              /*position: relative;*/
+              border: 1px solid #ccc;
+              border-bottom-left-radius: 10px;
+              border-bottom-right-radius: 10px;
+              overflow: hidden;
+              width: 100%; /* Ancho de la tarjeta */
+              background-color: whitesmoke;
+            }
+
+            .contenido-detalle p{
+              /*position: relative;*/
+              padding-left: 20px;
+              padding-right: 20px;
+              border-bottom-left-radius: 10px;
+              border-bottom-right-radius: 10px;
+              overflow: hidden;
+              width: 100%; /* Ancho de la tarjeta */
+              background-color: whitesmoke;
+              font-size: 20px;
+            }
+
+  /*DETALLE*/
+
+  

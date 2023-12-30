@@ -61,6 +61,9 @@
                         <h3><a href="{% url 'noticias:detalle' noticia.pk %}">{{noticia.titulo}}</a></h3>
                         <p>{{noticia.resumen}}</p>
                     </div>
+                    <div class="etiqueta-flotante-pie">
+                        @{{noticia.autor}} - {{noticia.fecha_publicacion}}
+                    </div>
                 </div>        
             {% endfor %}
 

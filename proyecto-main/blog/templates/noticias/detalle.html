@@ -2,14 +2,25 @@
 {% load static %}
 {% block titulo %}Noticias{% endblock titulo %}
 {% block contenido %}
-    <h2>Mi noticia detallada</h2>
-    <div class="noti">
-        <img src="{{noticias.imagenes.url}}" width="30%">
-        <h3>{{noticias.titulo}}</h3>
+
+    <div class="imagen-titulo-detalle">
+        <img src="{{noticias.imagenes.url}}" width="30%" alt="Imagen oscurecida">
+        <div class="titulo-flotante-detalle">
+            {{noticias.titulo}}
+        </div>
+        <div class="resumen-flotante-detalle">
+            {{noticias.resumen}}
+        </div>
+    </div>
+
+    <div class="contenido-detalle">
+        <br>
         <p>{{noticias.contenido}}</p>
         <p>{{noticias.fecha_publicacion}}</p>
-        <p>{{noticias.categoria_noticia}}</p>
-        <p>Autor: {{noticias.autor}}</p>
+        <p style=" background-color: rgb(60, 60, 60); color: #fff; padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px; border-radius: 5px;"
+            >{{noticias.categoria_noticia}}
+        </p>
+        <p style="color: #1e557b; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 24px;">@{{noticias.autor}}</p>
         {% if user.is_authenticated and noticia.autor == user or user.is_staff %}
         <a href="{% url 'noticias:edit_noticia' pk=noticias.pk %}">Editar</a>
             <form method="POST" action="{% url 'noticias:detalle' pk=noticias.pk %}">
@@ -17,9 +28,27 @@
                 <button type="submit" name="delete_noticia">BORRAR</button>
             </form>
         {% endif %}
-    </div>
+
         <br>
-        <h4>Comentarios</h4>
+    </div>
+
+    <br>
+
+    <div style="background-color: white;">
+        <div style="display: flex; padding-left: 20px; position: static;">
+            <h2>Comentarios</h2>
+
+        </div>
+        
+        <hr style="border: 2px solid #3498db; margin-left: 20px; margin-right: 20px;">
+
+        <!--- Manifiesto de la pagina --->
+            <p> Se respetuoso, no uses lenguaje ofensivo. Evita compartir datos personales como numeros de teléfono, email, dirección, etc.</p>
+            <br>
+            <!--- <img src="{% static 'img/Fondo1.jpg' %}" class="Banner"> --->
+     </div>    
+        <br>
+     <div style="text-align: left; padding-left: 20px;">
         {% for comentario in comentarios %}
             <p><strong>{{comentario.usuario}} - {{comentario.fecha_creacion}}</strong></p>
             <p>{{comentario.contenido}}</p>
@@ -32,6 +61,7 @@
             </form>
         <br>
         {% endfor %}
+    </div>        
         {% if user.is_authenticated %} 
             <h4>Añadir comentarios</h4>
             <form method="post" action="{% url 'noticias:add_comentario' noticias.pk %}">
@@ -44,4 +74,5 @@
             <a href="{% url 'login' %}">INICIAR SESION</a>
         {% endif %}
         <a href="{% url 'noticias:listar' %}">VOLVER</a>
+
 {% endblock contenido %}
