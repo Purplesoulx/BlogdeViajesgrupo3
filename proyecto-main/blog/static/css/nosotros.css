@@ -268,5 +268,45 @@ a:hover {
               font-size: 20px;
             }
 
+  /*NOSOTROS*/
+
+  /* Estilos para las tarjetas y su contenedor */
+    .tarjetas-nosotros {
+        display: flex;
+        gap: 20px; /* Espacio entre las tarjetas */
+        padding-left: 20px;
+        overflow-x: auto;
+        flex-wrap: wrap; /* Permitir el salto de línea cuando sea necesario */
+      }
+  
+      .tarjeta-persona {
+        /*position: relative;*/
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 250px; /* Ancho de la tarjeta */
+        border-radius: 10px;
+      }
+
+        /** Efecto  over**/
+        /*.tarjeta-destino:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añadimos una sombra en el hover */
+        /*}*/
+
+  
+      .tarjeta-persona-color {
+        width: 100%; /* La imagen ocupa el 100% del ancho de la tarjeta */
+        height: 400px; /* Altura de la imagen */
+        object-fit: cover; /* Ajusta la imagen para llenar la caja sin distorsionar */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+  
+      .tarjeta-persona .contenido {
+        padding: 10px;
+        background-color: white;
+        text-align: left;
+      }
+    
 /*Prueba push git*/
 
