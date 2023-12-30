@@ -1,5 +1,8 @@
 from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
+ALLOWED_HOSTS = ['rodrigofer.pythonanywhere.com']
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -7,10 +10,10 @@ from .base import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'micacomision6$default',
-        'USER': 'micacomision6',
-        'PASSWORD': 'informatorio2023',
-        'HOST': 'micacomision6.mysql.pythonanywhere-services.com',
+        'NAME': 'RodrigoFer$default',
+        'USER': 'RodrigoFer',
+        'PASSWORD': 'bloggrupo3',
+        'HOST': 'RodrigoFer.mysql.pythonanywhere-services.com',
         'PORT': '',
     }
 }
