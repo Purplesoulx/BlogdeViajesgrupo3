@@ -7,10 +7,10 @@ from .base import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'micacomision6$default',
-        'USER': 'micacomision6',
-        'PASSWORD': 'informatorio2023',
-        'HOST': 'micacomision6.mysql.pythonanywhere-services.com',
+        'NAME': 'RodrigoFer$default',
+        'USER': 'RodrigoFer',
+        'PASSWORD': 'bloggrupo3',
+        'HOST': 'RodrigoFer.mysql.pythonanywhere-services.com',
         'PORT': '',
     }
 }
